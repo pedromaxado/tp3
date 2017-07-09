@@ -1,12 +1,12 @@
 CC = gcc
 
-CFLAGS = -Iheaders -g -Wall -Wextra -Werror -pedantic -march=native -std=c99
+CFLAGS = -Iheaders -g -Wall -Wextra -Werror -pedantic -O2 -flto -std=c99
 
 RM = rm -f
 
 VPATH = src
 
-OBJS = main.o pair.o vector.o gohorse.o
+OBJS = main.o pair.o vector.o gohorse.o greedy.o
 
 MAIN = tp3
 
