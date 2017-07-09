@@ -1,5 +1,5 @@
 /* ======================================================== *
- *              Trabalho Prático 0 - AEDS III               *
+ *              Trabalho Prático 3 - AEDS III               *
  *                                                          *
  * @ Pedro Otávio Machado Ribeiro.                          *
  *                                                          *
@@ -7,7 +7,6 @@
  * vetor implementada com array de inteiros.                *
  * ======================================================== */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
 #include "vector.h"
@@ -43,7 +42,7 @@ void reserveVector( vector v, int m ) {
 
 		v->capacity = m;
 
-		type* aux = malloc( sizeof( int ) * v->capacity );
+		type* aux = ( type* ) malloc( sizeof( type ) * v->capacity );
 
 		for ( int i = 0; i < v->size; i++ )
 			aux[i] = v->array[i];
@@ -54,14 +53,14 @@ void reserveVector( vector v, int m ) {
 	}
 }
 
-vector new_vector() {
+vector new_vector( int size ) {
 
 	vector v = ( vector ) malloc ( sizeof( struct vector_t ) );
 
 	v->size = 0;
-	v->capacity = INIT_CAPACITY;
+	v->capacity = size;
 
-	v->array = ( type* ) malloc( INIT_CAPACITY * sizeof( type ) );
+	v->array = ( type* ) malloc( size * sizeof( type ) );
 
 	return v;
 }
@@ -80,11 +79,11 @@ void add( vector v, type k ) {
 	v->size++;
 }
 
-type get( vector v, int pos ) {
+type get ( vector v, int pos ) {
 
 	type k = NULL;
 
-	if ( pos < v->size )
+	if ( pos < v->size && pos >= 0 )
 		k = v->array[pos];
 
 	return k;
@@ -92,6 +91,10 @@ type get( vector v, int pos ) {
 
 void pop_back( vector v ) {
 	v->size--;
+}
+
+void clear( vector v ) {
+	v->size = 0;
 }
 
 int size( vector v ) {
@@ -102,7 +105,7 @@ int capacity( vector v ) {
     return v->capacity;
 }
 
-bool isVectorEmpty( vector v ) {
+bool empty( vector v ) {
 	return v->size == 0;
 }
 

@@ -5,7 +5,7 @@
 #include <string.h>
 #include <vector.h>
 
-void go_horse( vector pairs, vector combinations, int count, long int *max ) {
+void go_horse( vector pairs, vector combinations, int count, int *max ) {
 
     if ( count == size(pairs) ) {
         if ( size(combinations) > *max )
@@ -25,9 +25,9 @@ void go_horse( vector pairs, vector combinations, int count, long int *max ) {
 
 int go_horse_solver( vector pairs ) {
 
-    long int max = 0;
+    int max = 0;
 
-    vector combinations = new_vector();
+    vector combinations = new_vector( size(pairs) + 1 );
     add( combinations, new_pair(-1, -1) );
 
     go_horse( pairs, combinations, 0, &max );

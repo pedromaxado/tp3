@@ -22,10 +22,12 @@ typedef struct vector_t* vector;
 /*
 * Cria um vetor vazio.
 *
+* Parâmetro:
+*   * size - tamanho inicial
 * Retorna:
 *   * vector - Novo vetor criado
 */
-vector new_vector ( );
+vector new_vector ( int size );
 
 /*
 * Libera a memória utilizada pelo vetor.
@@ -62,6 +64,14 @@ type get ( vector v, int pos );
 void pop_back( vector v );
 
 /*
+* Limpa um vetor.
+*
+* Parâmetro:
+*   * v - vetor
+*/
+void clear( vector v );
+
+/*
 * Retorna o tamanho do vetor, aka, quantidade de
 * elementos nele contido.
 *
@@ -93,7 +103,7 @@ int capacity ( vector v );
 * Retorna:
 *   * bool - true se vazio, false se não
 */
-bool isVectorEmpty ( vector v );
+bool empty ( vector v );
 
 /*
 * Ordena um vetor de pares.

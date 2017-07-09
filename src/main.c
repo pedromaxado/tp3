@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <vector.h>
 #include <gohorse.h>
+#include <greedy.h>
 
 #define GOHORSE 'b'
 #define DYNAMIC 'd'
@@ -18,13 +19,11 @@ int main() {
                 house,
                 pub;
 
-            vector pairs = new_vector();
+            vector pairs = new_vector( nPubs );
 
-            while ( i-- ) {
-                scanf("%d %d", &pub, &house);
-
-                add( pairs, new_pair( pub, house ) );
-            }
+            while ( i-- )
+                if ( scanf("%d %d", &pub, &house) )
+                    add( pairs, new_pair( pub, house ) );
 
             sort( pairs );
 
@@ -34,10 +33,11 @@ int main() {
                     printf("%d\n", go_horse_solver( pairs ));
                     break;
 
-                case DYNAMIC:
+                case GREEDY:
+                    printf("%d\n", greedy_solver( pairs ));
                     break;
 
-                case GREEDY:
+                case DYNAMIC:
                     break;
 
                 default:
