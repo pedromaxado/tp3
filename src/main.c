@@ -2,6 +2,7 @@
 #include <vector.h>
 #include <gohorse.h>
 #include <greedy.h>
+#include <dp.h>
 
 #define GOHORSE 'b'
 #define DYNAMIC 'd'
@@ -30,14 +31,15 @@ int main() {
             switch ( solver ) {
 
                 case GOHORSE:
-                    printf("%d\n", go_horse_solver( pairs ));
+                    printf( "%d\n", go_horse_solver( pairs ) );
                     break;
 
                 case GREEDY:
-                    printf("%d\n", greedy_solver( pairs ));
+                    printf( "%d\n", greedy_solver( pairs ) );
                     break;
 
                 case DYNAMIC:
+                    printf( "%d\n", dp_solver( pairs ) );
                     break;
 
                 default:

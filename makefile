@@ -6,7 +6,7 @@ RM = rm -f
 
 VPATH = src
 
-OBJS = main.o pair.o vector.o gohorse.o greedy.o
+OBJS = main.o pair.o vector.o gohorse.o greedy.o dp.o
 
 MAIN = tp3
 

@@ -1,9 +1,9 @@
 /* ======================================================== *
- *              Trabalho Prático 0 - AEDS III               *
+ *              Trabalho Prático 3 - AEDS III               *
  *                                                          *
  * @ Pedro Otávio Machado Ribeiro.                          *
  *                                                          *
- * stack.c - Define a estrutura de dados e cabeçalho de     *
+ * vector.c - Define a estrutura de dados e cabeçalho de    *
  * funções relacionadas a manipulação de um TAD vetor       *
  * implementado com array de inteiros.                      *
  * ======================================================== */

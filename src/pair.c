@@ -1,5 +1,17 @@
+/* ======================================================== *
+ *              Trabalho Prático 3 - AEDS III               *
+ *                                                          *
+ * @ Pedro Otávio Machado Ribeiro.                          *
+ *                                                          *
+ * pair.c - Define funções para manipulação de uma TAD      *
+ * pair.                                                    *
+ * ======================================================== */
+
 #include <stdlib.h>
 #include <pair.h>
+
+/* abaixo seguem a estrutura e suas funções básicas */
+/* o funcionamento das funções é trivial */
 
 struct pair_t {
     int fi,
@@ -34,10 +46,30 @@ int getSecnd( pair p ) {
     return p->se;
 }
 
+/*
+* Compara duas bandeirolas pelo termino.
+*
+* Parâmetros:
+*   a - par que representa a bandeirola a
+*   b - par que representa a bandeirola b
+*
+* Retorna:
+*   * bool - verdadeiro se a termina antes de b, falso caso contrario
+*/
 bool compare( pair a, pair b ) {
     return a->fi < b->fi;
 }
 
+/*
+* Retorna se a bandeirola a cruza com a b.
+*
+* Parâmetros:
+*   a - par que representa a bandeirola a
+*   b - par que representa a bandeirola b
+*
+* Retorna:
+*   * bool - verdadeiro se cruza, falso caso contrario
+*/
 bool collides( pair a, pair b ) {
 
     int aEven, bEven, aOdd, bOdd;
